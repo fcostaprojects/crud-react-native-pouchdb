@@ -44,8 +44,8 @@ export default class Home extends Component {
     return (Actions.currentScene === 'home') ? true : false;
   }
 
-  async _searchAll() {
-    const bookDb = await Database.getBookDb();
+  _searchAll() {
+    const bookDb = Database.getBookDb();
     bookDb.allDocs({
       include_docs: true,
       inclusive_end: true
@@ -56,12 +56,12 @@ export default class Home extends Component {
     })
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     this._searchAll();
   }
 
-  async _remove(item) {
-    const bookDb = await Database.getBookDb();
+  _remove(item) {
+    const bookDb = Database.getBookDb();
     bookDb.remove(item).then(() => {
       this._searchAll();
     })

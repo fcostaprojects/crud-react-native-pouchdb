@@ -10,8 +10,8 @@ const BOOK_DB = 'Books.db';
 
 let bookDb = null;
 
-const _createBookDb = async function() {
-  const db = await new PouchDB(BOOK_DB, { adapter: 'react-native-sqlite', revs_limit: 1 });
+const _createBookDb =  function() {
+  const db =  new PouchDB(BOOK_DB, { adapter: 'react-native-sqlite', revs_limit: 1 });
   return db;
 }
 

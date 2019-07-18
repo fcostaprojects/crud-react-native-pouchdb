@@ -36,8 +36,8 @@ export default class EditBook extends Component {
 
   }
 
-  async _save() {
-    const bookDb = await Database.getBookDb();
+  _save() {
+    const bookDb = Database.getBookDb();
     if (this.state._id != '') {
       bookDb.put(this.state).then(() => { Actions.home(); })
     } else {
